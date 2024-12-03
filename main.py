@@ -36,5 +36,5 @@ for word in query.lower().split():
 query_reduced = np.dot(np.linalg.inv(s_k), np.dot(u_k.T, query_vec))
 
 similarities = cosine_similarity(query_reduced.reshape(1, -1), doc_reduced.T).flatten()
-similarities = np.round(similarities, 2)
+similarities = np.round(similarities, 2).tolist()
 print(similarities)
